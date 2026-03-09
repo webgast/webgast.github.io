@@ -27,6 +27,18 @@
             font-weight: normal;
             font-style: normal;
         }
+
+                .product {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            margin: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 
     <title>Gars Guitare</title>
@@ -48,7 +60,35 @@
     <main>
         <div class="what">
 
+<h1>
+    Boss Grommets
+</h1>
 
+    <style>
+
+    </style>
+
+<div class="product">
+    <h2>Grommet King</h2>
+    <img src="images/grommet_king_new.png" alt="Grommet King">
+    <h3>Choose Amount:</h3>
+    <input type="number" id="amount" value="5" min="5" max="25" step="5" />
+
+    <button onclick="sendOrder()">Order Now</button>
+</div>
+
+<p id="orderConfirmation" style="text-align: center; margin-top: 20px;"></p>
+<p style="text-align: center;">For any inquiries, please send an email to: <a href="mailto:garsguitare@gmail.com">garsguitare@gmail.com</a></p>
+
+<script>
+    function sendOrder() {
+        const amount = document.getElementById('amount').value;
+        const email = "garsguitare@gmail.com";
+        const confirmationMessage = `Order placed for ${amount} units! Please send your order to ${email}.`;
+
+        document.getElementById('orderConfirmation').innerText = confirmationMessage;
+    }
+</script>            
             <h1>
                 Service d'instruments à cordes / Luthier
             </h1>
