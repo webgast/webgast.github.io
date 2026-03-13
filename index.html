@@ -74,6 +74,10 @@
     <h3>Choose Amount:</h3>
     <input type="number" id="amount" value="5" min="5" max="25" step="5" />
 
+        <h3>Location:</h3>
+    <input type="text" id="country" placeholder="Country" class="input-field" required />
+    <input type="text" id="city" placeholder="City" class="input-field" required />
+
     <button onclick="sendOrder()">Order Now</button>
 </div>
 
@@ -83,9 +87,16 @@
 <script>
    function composeEmail() {
         const amount = document.getElementById('amount').value;
+        const country = document.getElementById('country').value.trim();
+        const city = document.getElementById('city').value.trim();
+        
+        if (!country || !city) {
+            alert("Please enter your country and city.");
+            return;
+        }
         const email = "garsguitare@gmail.com";
         const subject = "Order for Grommet King";
-        const body = `I would like to order ${amount} magniicent Grommet King grommets.`;
+        const body = `I would like to order ${amount} magnificent Grommet King grommets.\nI live in: ${city}, ${country}`;
         
         window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
