@@ -81,14 +81,16 @@
 <p style="text-align: center;">For any inquiries, please send an email to: <a href="mailto:garsguitare@gmail.com">garsguitare@gmail.com</a></p>
 
 <script>
-    function sendOrder() {
+   function composeEmail() {
         const amount = document.getElementById('amount').value;
         const email = "garsguitare@gmail.com";
-        const confirmationMessage = `Order placed for ${amount} units! Please send your order to ${email}.`;
-
-        document.getElementById('orderConfirmation').innerText = confirmationMessage;
+        const subject = "Order for Grommet King";
+        const body = `I would like to order ${amount} units of Grommet King.`;
+        
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
-</script>            
+</script>
+      
             <h1>
                 Service d'instruments à cordes / Luthier
             </h1>
